@@ -5,41 +5,13 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>画板</title>
     <link rel="stylesheet" href="style.css"></link>
 </head>
+
 <body>
-    <canvas id="canvas">
-        
-    </canvas>
-    <script>
-        let canvas = document.getElementById("canvas");
-        canvas.width = document.documentElement.clientWidth;
-        canvas.height = document.documentElement.clientHeight;
-
-        let ctx = canvas.getContext("2d");
-        ctx.fillStyle = 'black';
-
-        
-        let painting = false;
-        canvas.onmousedown = () => {
-            painting = true;
-        }
-        canvas.onmousemove = (e) => {
-            if (painting === true){
-                ctx.beginPath();
-                ctx.arc(e.clientX, e.clientY, 5, 0, 2 * Math.PI);
-                ctx.stroke();
-                ctx.fill();
-            } else {
-                
-            }
-            
-        }
-        canvas.onmouseup = () => {
-            painting = false;
-        }
-
-    </script>
+    <canvas id="canvas"></canvas>
 </body>
+<script src="./main.js"></script>
+
 </html>
